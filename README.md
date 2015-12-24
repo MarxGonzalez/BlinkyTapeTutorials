@@ -1,3 +1,8 @@
+# Current Status
+These initial samples are in a very draft form at this point. I hope to clean 
+them up before the new year.
+
+
 # BlinkyTape Tutorials
 Beginner level Blinky Tape Arduino scripts to get you going
 
