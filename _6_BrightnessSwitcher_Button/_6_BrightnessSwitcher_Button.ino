@@ -1,9 +1,10 @@
 // This program will setup the board attached to the BlinkyTape and display 
-// one color all across the LEDs
-// When you push the button, it will change to a new color and wait for you 
-// to push the button again  before changing to a new color.
+// one color all across the LEDs. 
+// When you push the button, it will change the brightness level and wait for 
+// you to push the button again  before changing the brightness again.
 
 // This will show you how you can use the button
+// This will show you how to change the brightness
 
 #include <FastLED.h>  // The FastLED libraries which talk to the LEDs
 
@@ -15,7 +16,6 @@ struct CRGB leds[LED_COUNT]; // this struct contains 60 CRGB one for each LED
                             // FAST LED uses this to set the colors
 
 int brightLevel = 10; // The starting level for the lights
-int colorID = 1; // is an ID we're going to use to pick what color to show.
 
 uint8_t lastButtonState = 1; 
     // This will track what the state of the button was when we last checked it.
@@ -49,16 +49,18 @@ void cycleBrightness(){
 // functions, wait for button presses, etc.
 
 void loop() {
-// Our LEDs will be OFF when we start. Push the button and they change colors.
+// Our LEDs will be White when we start and at a lower brightness level. 
+// Push the button and the brightness will go up till it hits 80 and then 
+// start over at low again.
 
     // Let's see what the state of the button is and store that in buttonState
   uint8_t buttonState = digitalRead(BUTTON_PIN);  
   
   // Here's how this next part reads in English:
   // If the button state is not the same as the last time we checked and the 
-  // button state is pressed (low or 0), change the color and store the current 
-  // button state as the last state AND 
-  // if the colorID is less than 3 increment colorID by 1 else set colorID to 1. 
+  // button state is pressed (low or 0), change the brightness level and store 
+  // the current button state as the last state AND if the colorID is less than 
+  // 80, add 10 to brightLevel else set brightLevel to 20.
   // In all other cases, store the current button state in the last button state
   // and keep going.
   
@@ -67,9 +69,6 @@ void loop() {
   // the last time then store the state again and keep going.
   
   // Load this on your BlinkyTape and push the button!
-  // Notice that the flickering is gone and the color changes 
-  // are precisely one per button press
-
 
   if ((buttonState != lastButtonState) && (buttonState == 0)){
     cycleBrightness();
