@@ -83,3 +83,8 @@ is a great 101 read, but their whole site is a great source of information
 when you're ready to move on to more complex projects.
 * [FastLED API Documentation](http://fastled.io/docs/3.1/functions.html) 
 explains everything FastLED can do.
+
+---
+[Contribute to BlinkyTape Tutorials](CONTRIBUTING.md) | [MIT Open Source License](LICENSE.md)  
+
+I am not affiliated in anyway with BLinkLabs. I just thinkg they're cool.
