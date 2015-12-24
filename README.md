@@ -65,22 +65,12 @@ Name | Description
 --- | --- 
 _1_OneColor | Displays one solid color across all the LEDs
 _2_ColorSwitcher | Displays predefined set of colors rotating every few seconds
-_3_ColorSwitcher | This does the exact same thing as ColorSwitcher but in a 
-different way using an incremented counter and a case statement.
-_4_ColorSwitcher_Button | Displays one solid color which changes when you press 
-the button to a new predefined color
-_5_ColorSwitcher_Button | Does the same thing as ColorSwitcher_Button but 
-handles button presses better and eliminates the rapid changing of colors if 
-you hold the button down.
-_6_BrightnessSwitcher_Button | This time instead of changing the color we 
-will change the brightness
-_7_ButtonPressLength | Do different things depending on how long we 
-press the button
-_8_CampingLight | This uses everything we have written. Its changes colors on 
-a long press between Red, Green, Blue, White which I think are useful when 
-camping and uses a short press to change the brightness level of the LEDs. 
-This also has most of the comments removed as everything is explained in the 
-other samples.
+_3_ColorSwitcher | This does the exact same thing as ColorSwitcher but in a different way using an incremented counter and a case statement.
+_4_ColorSwitcher_Button | Displays one solid color which changes when you press the button to a new predefined color
+_5_ColorSwitcher_Button | Does the same thing as ColorSwitcher_Button but handles button presses better and eliminates the rapid changing of colors if you hold the button down.
+_6_BrightnessSwitcher_Button | This time instead of changing the color we will change the brightness
+_7_ButtonPressLength | Do different things depending on how long we press the button
+_8_CampingLight | This uses everything we have written. Its changes colors on a long press between Red, Green, Blue, White which I think are useful when camping and uses a short press to change the brightness level of the LEDs. This also has most of the comments removed as everything is explained in the other samples.
 
 NOTE: I wanted these files\folders to sort so I numbered them, but Arduino
 doesn't allow a number as the first character in a file name (huh?) so I added
