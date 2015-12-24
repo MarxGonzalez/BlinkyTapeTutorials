@@ -78,7 +78,6 @@ the "_" to the beginning of the file names. Arduino is weird. :-)
 
 ## Further Reading ##
 
-* TODO: Add some links to basic Arduino programming information
 * [FastLed Basic Usage](https://github.com/FastLED/FastLED/wiki/Basic-usage) 
 is a great 101 read, but their whole site is a great source of information 
 when you're ready to move on to more complex projects.
