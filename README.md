@@ -1,6 +1,6 @@
 # Current Status
-These initial samples are in a very draft form at this point. I hope to clean 
-them up before the new year.
+Samples 1 - 8 are complete, but I'm sure they can use improvements. I'm also 
+looking for suggestions for the next set of samples.
 
 
 # BlinkyTape Tutorials
