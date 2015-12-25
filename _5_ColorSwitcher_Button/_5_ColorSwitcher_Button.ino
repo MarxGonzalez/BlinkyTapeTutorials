@@ -38,22 +38,31 @@ void setup()
 
 void changeColor(){
   if (colorID < 3){  // This part increments the colorID
-      colorID++;
-      } else {
-        colorID = 1;
-      }
-  switch (colorID){   // This part changes the color depending on colorID
+    colorID++;
+    } else {
+      colorID = 1;
+    }
+  switch (colorID){
     case 1:
-      LEDS.showColor(CRGB(255, 0, 0)); // Red
+        // Red
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 255, 0, 0);
+        }
       break;
     case 2:
-      LEDS.showColor(CRGB(0, 0, 255)); // Blue
+      // Blue
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 0, 0, 25);
+        }
       break;
     case 3:
-      LEDS.showColor(CRGB(0, 255, 0)); // Green
+      // Green
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 0, 255, 0);
+        }
       break;
     }
-  
+  LEDS.show(); // Send the current color to the BlinkyTape
   }
 
 

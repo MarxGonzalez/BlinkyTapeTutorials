@@ -43,18 +43,32 @@ void setup(){
 // We can call this inside those functions.
 // This is the function that increments the colorID and changes the color
 void changeColor(){
+  if (colorID < 3){  // This part increments the colorID
+    colorID++;
+    } else {
+      colorID = 1;
+    }
   switch (colorID){
     case 1:
-      LEDS.showColor(CRGB(255, 0, 0)); // Red
+        // Red
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 255, 0, 0);
+        }
       break;
     case 2:
-      LEDS.showColor(CRGB(0, 0, 255)); // Blue
+      // Blue
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 0, 0, 25);
+        }
       break;
     case 3:
-      LEDS.showColor(CRGB(0, 255, 0)); // Green
+      // Green
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 0, 255, 0);
+        }
       break;
     }
-  
+  LEDS.show(); // Send the current color to the BlinkyTape
   }
 
 
@@ -89,14 +103,9 @@ void loop() {
         pressLength++;
       }
       if (pressLength < 10) {
-        changeColor();
-        if (colorID < 3){
-        colorID++;
-        } else {
-          colorID = 1;
-        } 
+        changeColor(); 
       } else {
-        LEDS.showColor(CRGB(0, 0, 0)); // OFF
+        LEDS.showColor(CRGB(0, 0, 0)); // Lights OFF
         lastButtonState = buttonState;
       }
   } else {

@@ -3,6 +3,8 @@
 // color, then another, etc., etc. and loop back to be beginning.
 
 // You should get a feel for the loop from this.
+// You will see use a different way to set the colors by setting values
+// for every member of the array of LEDs
 
 #include <FastLED.h>  // The FastLED libraries which talk to the LEDs
 
@@ -30,25 +32,43 @@ void setup()
 // functions, wait for button presses, etc.
 
 void loop() {
-  LEDS.showColor(CRGB(255, 0, 0)); // Red
   LEDS.setBrightness(40); // Mid Level 
                           // Notice I only set the brightness level once. 
                           // If you don't change it, it stays the same.
 
+  for( int k=0; k<LED_COUNT; k++) {
+    leds[k] = CRGB( 255, 0, 0);
+    } // Fill the LEDs with color, RED in this case
+      // This creates an array of 60 CRGBs each 255,0,0 so that each LED 
+      // will be RED      
+  LEDS.show(); // Send all that to the lights
+
   delay(changeSpeed); // delay (wait) for "changeSpeed" (5000) milliseconds
   
-  LEDS.showColor(CRGB(0, 255, 0)); // Green
+  for( int k=0; k<LED_COUNT; k++) {
+  leds[k] = CRGB( 0, 255, 0);
+  } // Fill the LEDs with color, GREEN in this case
+  LEDS.show(); // Send all that to the lights
   delay(changeSpeed);
 
-  LEDS.showColor(CRGB(0, 0, 255)); // Blue
+  for( int k=0; k<LED_COUNT; k++) {
+  leds[k] = CRGB( 0, 0, 255);
+  } // Fill the LEDs with color, BLUE in this case
+  LEDS.show(); // Send all that to the lights
   delay(changeSpeed);
 
-  LEDS.showColor(CRGB(255, 255, 255)); // White
+  for( int k=0; k<LED_COUNT; k++) {
+  leds[k] = CRGB( 255, 255, 255);
+  } // Fill the LEDs with color, WHITE in this case
+  LEDS.show(); // Send all that to the lights
   delay(changeSpeed);
 
-  LEDS.showColor(CRGB(80, 40, 10)); // I made this up. 
-        // On the web it looks like Brown to me. 
-        // On the BlinkyTape it looks more like a light rose color.
+  for( int k=0; k<LED_COUNT; k++) {
+  leds[k] = CRGB( 80, 40, 10);
+  }   // Fill the LEDs with color
+      // On the web it looks like Brown to me. 
+      // On the BlinkyTape it looks more like a light rose color.
+  LEDS.show(); // Send all that to the lights
   delay(changeSpeed);
   
 }

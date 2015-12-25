@@ -26,8 +26,11 @@ uint8_t lastButtonState = 1;
 void setup()
 {  
   LEDS.addLeds<WS2812B, PIN_SIGNAL, GRB>(leds, LED_COUNT); // BlinkyBoard Config
+  for( int k=0; k<LED_COUNT; k++) {
+    leds[k] = CRGB( 255, 255, 255);
+    } // Fill the LEDs with color, white in this case
   LEDS.setBrightness(brightLevel); // Set initial brightness  level
-  LEDS.showColor(CRGB(255, 255, 255)); // start with WHITE Lights
+  LEDS.show();
   pinMode(BUTTON_PIN, INPUT_PULLUP); 
     // The mode of pin to which the button is connected
 }

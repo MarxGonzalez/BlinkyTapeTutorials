@@ -10,7 +10,7 @@
 #define PIN_SIGNAL 13
 #define LED_COUNT 60 
 struct CRGB leds[LED_COUNT];
-int colorID = 1;   // counter for track current color
+int colorID = 0;   // counter for track current color
 uint8_t lastButtonState = 1; // Tracks the state of the button
                              // start with unpressed
 int longPressLength = 10; // How long is a long press?
@@ -20,24 +20,44 @@ int BRIGHT_LEVEL = 20; // The starting level for the lights
 
 void setup(){  
   LEDS.addLeds<WS2812B, PIN_SIGNAL, GRB>(leds, LED_COUNT); // BlinkyBoard Config
-  LEDS.showColor(CRGB(255, 255, 255)); // White
+  changeColor();
   LEDS.setBrightness(BRIGHT_LEVEL);
   pinMode(BUTTON_PIN, INPUT_PULLUP); // The mode of pin for the button
 }
 
 void changeColor(){
+  if (colorID < 4){  // This part increments the colorID
+    colorID++;
+    } else {
+      colorID = 1;
+    }
   switch (colorID){
     case 1:
-      LEDS.showColor(CRGB(255, 0, 0)); // Red
+      // White
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 255, 255, 255);
+        }
       break;
     case 2:
-      LEDS.showColor(CRGB(0, 0, 255)); // Blue
+        // Red
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 255, 0, 0);
+        }
       break;
     case 3:
-      LEDS.showColor(CRGB(0, 255, 0)); // Green
+      // Blue
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 0, 0, 25);
+        }
+      break;
+    case 4:
+      // Green
+      for( int k=0; k<LED_COUNT; k++) {
+        leds[k] = CRGB( 0, 255, 0);
+        }
       break;
     }
-  
+  LEDS.show(); // Send the current color to the BlinkyTape
   }
 
 void cycleBrightness(){   
@@ -47,6 +67,7 @@ void cycleBrightness(){
     BRIGHT_LEVEL=20;
   }
   LEDS.setBrightness(BRIGHT_LEVEL);   // Set the new brightness level
+  LEDS.show();
   }  
   
 
@@ -67,11 +88,6 @@ void loop() {
       } else {
         // Long Press Action
         changeColor();
-        if (colorID < 3){
-        colorID++;
-        } else {
-          colorID = 1;
-        } 
         lastButtonState = buttonState;
       }
   } else {
