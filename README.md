@@ -87,4 +87,4 @@ explains everything FastLED can do.
 ---
 [Contribute to BlinkyTape Tutorials](CONTRIBUTING.md) | [MIT Open Source License](LICENSE.md)  
 
-I am not affiliated in anyway with BLinkLabs. I just think they're cool.
+I am not affiliated in anyway with BlinkLabs. I just think they're cool.
